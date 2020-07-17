@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%- #This is for the pop up when A new posts create  -%>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<% if notice.present? %>
+  <p class="alert alert-info">
+    <%= notice %>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+  </p>
+<% end %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%- #We create a _post file and use that here and we will send @post value there  -%>
+
+<%= render 'post' , post: @post  %>
+
+<%- #Edit e dile edit action call hobe   -%>
+<%- #Back dile /post e jabe  -%>
+
+<%- #We dont want anyone to edit our blog those will be on manage posts  -%>
+<%- #<%= link_to 'Edit', edit_post_path(@post)   -%>
+<%- #<%= link_to 'Back', posts_path   -%>
+
+
+
+

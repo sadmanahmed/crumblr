@@ -1,0 +1,24 @@
+  <%- #We have removed @ from the post as the value is now coming from other plaaces  -%>
+
+
+<p>
+  <%- #Removing the title name and making it bigger by using h2  -%>
+  <%- #<strong>Title:</strong>  -%>
+  <h2>
+  <%= link_to post.title, post %>
+  </h2>
+</p>
+
+<p>
+  <%- #<strong>Content:</strong>  -%>
+
+
+  <%= simple_format post.content %>
+</p>
+
+<%- #For showing the date of creation in a post  -%>
+<p class= "text-muted">
+  <small>
+  Posted On <%= post.created_at.to_formatted_s(:longf) %>
+  </small>
+</p>

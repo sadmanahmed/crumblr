@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1> Listing Posts</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -15,7 +15,8 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.content %></td>
+        <%- #Truncate call korle word limited hoye show korbe  -%>
+        <td><%= simple_format truncate(post.content, length: 100) %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
